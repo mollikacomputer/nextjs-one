@@ -1,9 +1,13 @@
+import Comment from "../../../Components/comment/Comment";
+
 const index = ({comments}) => {
-console.log(comments);
+
     return (
         <div>
-            <h2 className="text-2xl" > comments route</h2>
-
+            <h2 className="text-2xl" > comments route {comments.length} </h2>
+            {
+               comments.map( comment => <Comment comment={comment} >     </Comment> )
+            }
         </div>
     );
 };
@@ -11,7 +15,7 @@ console.log(comments);
 export default index;
 
 export const getServerSideProps = async()=>{
-    const res = await fetch('https://jsonplaceholder.typicode.com/comments?_limits=50')
+    const res = await fetch('https://jsonplaceholder.typicode.com/comments?_limit=5')
     const data = await res.json();
     return{
         props:{
