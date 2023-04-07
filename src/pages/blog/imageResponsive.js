@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-const index = () => {
+const imageResponsive = () => {
     return (
         <div>
             <h2 className='text-3xl'> this is blog page</h2>
@@ -18,4 +18,4 @@ const index = () => {
     );
 };
 
-export default index;
+export default imageResponsive;
