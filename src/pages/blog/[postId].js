@@ -4,7 +4,9 @@ import { useRouter } from "next/router";
 
 const postId = ({ post }) => {
   const router = useRouter();
-  // const id = router.query.blogId;
+    const handleBack = () =>{
+        router.push("/blog/posts")
+    }
   return (
     <div className="card bg-primary text-primary-content">
       <Head>
@@ -14,9 +16,11 @@ const postId = ({ post }) => {
         <h2 className="card-title"> {post.title} </h2>
         <p>{post.body}</p>
         <div className="card-actions justify-end">
-          <Link href={"/blog/posts"}>
+            <button onClick={handleBack} className="btn">Back to post</button>
+            
+          {/* <Link href={"/blog/posts"}>
             <button className="btn">Back to post</button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

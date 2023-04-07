@@ -1,8 +1,10 @@
 import Head from "next/head";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
 const Post = ({ post }) => {
+
   return (
     <div className="card mt-10 bg-neutral text-neutral-content">
       <Head>
@@ -15,7 +17,6 @@ const Post = ({ post }) => {
           <Link href={`/blog/${post.id}`}>
             <button className="btn btn-primary"> See Details </button>
           </Link>
-          <button className="btn btn-ghost"> Back to post </button>
         </div>
       </div>
     </div>
